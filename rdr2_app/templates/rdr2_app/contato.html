@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Red Dead Redemption 2</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Contato</h1>
+    </header>
+    <main>
+        <h2>Entre em Contato com um Personagem</h2>
+        <form action="#" method="post" class="contact-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="character">Escolha um Personagem:</label>
+                <select id="character" name="character" required>
+                    <option value="" disabled selected>Selecione um personagem</option>
+                    <option value="arthur_morgan">Arthur Morgan</option>
+                    <option value="john_marston">John Marston</option>
+                    <option value="dutch_van_der_linde">Dutch Van Der Linde</option>
+                    <option value="sadie_adler">Sadie Adler</option>
+                    <option value="micah_bell">Micah Bell</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Enviar</button>
+        </form>
+
+        <h3>Personagens Disponíveis</h3>
+        <ul class="character-list">
+            <li><strong>Arthur Morgan:</strong> O protagonista principal, um fora da lei leal à sua gangue.</li>
+            <li><strong>John Marston:</strong> Um ex-fora da lei em busca de redenção e um futuro melhor.</li>
+            <li><strong>Dutch Van Der Linde:</strong> O carismático líder da gangue.</li>
+            <li><strong>Sadie Adler:</strong> Uma mulher forte e determinada que se junta à luta.</li>
+            <li><strong>Micah Bell:</strong> Um personagem controverso e ambicioso dentro da gangue.</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Red Dead Redemption 2 Fan Site</p>
+    </footer>
+</body>
+</html>
